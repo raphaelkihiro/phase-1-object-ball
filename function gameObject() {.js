@@ -154,111 +154,24 @@ function homePlayers() {
 
 console.log(homePlayers());
 
-function numPointsScored(playerName) {
-  const game = gameObject();
-  for (const team in game) {
-    if (game[team].players[playerName]) {
-      return game[team].players[playerName].points;
-    }
-  }
+function awaypoints() {
+  let object = gameObject();
+  return object["away"]["points"];
 }
-console.log(numPointsScored("Ben Gordon"));
+console.log(awaypoints());
 
-function shoeSize(playerName) {
-  let game = gameObject();
-  for (let team in game) {
-    if (game[team].players[playerName]) {
-      return game[team].players[playerName].shoe;
-    }
-  }
-}
-console.log(shoeSize("Alan Anderson"));
-
-function teamColors(teamName) {
-  let game = gameObject();
-  for (let squad in game) {
-    return game["home"].teamName[""].colors;
-  }
+function awayTeamName() {
+  return gameObject()["away"]["teamName"];
 }
 
-function teamName() {
-  let game = gameObject();
-  for (let name in game) return [game.home.teamName, game.away.teamName];
-}
-console.log(teamName());
+console.log(awayTeamName());
 
-function playersNumbers(teamName) {
-  let game = gameObject();
-  for (let number in game) {
-  }
-  return [
-    game.home.players["Brooks Lopez"].number,
-    game.away.players["Bismak Biyombo"].number,
-  ];
+function homePlayersAlanAnderson() {
+  return gameObject()["home"]["players"]["Alan Anderson"];
 }
-console.log(playersNumbers(teamName));
+console.log(homePlayersAlanAnderson());
 
-function playerstats(playerName) {
-  let game = gameObject();
-  for (let stats in game);
-  return [game.home.players["Jason Terry"], game.away.players["DeSagna Diop"]];
+function awayPlayersJeffAdrienSteals() {
+  return gameObject()["away"]["players"]["Jeff Adrien"]["steals"];
 }
-console.log(playerstats());
-
-function bigShoeRebounds() {
-  let game = gameObject();
-  let largestShoeSize = 0;
-  let rebounds = 0;
-  for (let player in game[team].players) {
-    if (game[team].players[player].shoe + largestShoeSize) {
-      largestShoeSize = game[team].players[player];
-      rebounds = game[team].players[player].rebounds;
-    }
-  }
-  return rebounds;
-}
-console.log(bigShoeRebounds());
-
-function mostPointsScored() {
-  let game = gameObject();
-  let mostPoints = 0;
-  let topScorer = "";
-  for (let team in game) {
-    for (let player in game[team].players) {
-      if (game[team].players[player].points > mostPoints) {
-        mostPoints = game[team].players[player].points;
-        topScorer = player;
-      }
-    }
-  }
-  return topScorer;
-}
-console.log(mostPointsScored());
-
-function winningTeam() {
-  let game = gameObject();
-  let homePoints = 0;
-  let awayPoints = 0;
-  for (let player in game.home.players) {
-    homePoints = game.home.players[player].points;
-  }
-  for (let player in game.away.players) {
-    awayPoints = game.away.players[player].points;
-  }
-  return homePoints > awayPoints ? game.home.teamName : game.away.teamName;
-}
-console.log(winningTeam());
-
-function playerWithLongestName() {
-  let game = gameObject();
-  let nameWithMostLetters = " ";
-  for (let team in game) {
-    for (let player in game[team].players) {
-      if (player.length > nameWithMostLetters.length) {
-        nameWithMostLetters = player;
-      }
-    }
-  }
-  return nameWithMostLetters;
-}
-console.log(playerWithLongestName());
+console.log;(awayPlayersJeffAdrienSteals());
